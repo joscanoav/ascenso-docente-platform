@@ -1,0 +1,27 @@
+{
+  "name": "ascenso-docente-platform",
+  "version": "1.0.0",
+  "description": "Plataforma de practica para el Ascenso Docente de Ingles",
+  "private": true,
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "server:dev": "node --watch server/index.js",
+    "client:install": "cd client && npm install",
+    "client:build": "cd client && npm run build",
+    "build": "npm run client:install && npm run client:build",
+    "seed": "node server/seed/seed.js",
+    "seed:reset": "node server/seed/seed.js --reset"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1"
+  }
+}
