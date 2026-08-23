@@ -1,8 +1,10 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/Header';
+import ChatWidget from './components/ChatWidget';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useAuth } from './context/AuthContext';
 
+import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -14,7 +16,7 @@ import HistoryDetail from './pages/HistoryDetail';
 import Admin from './pages/Admin';
 
 export default function App() {
-  const { loading } = useAuth();
+  const { user, loading } = useAuth();
 
   if (loading) return null;
 
@@ -22,6 +24,7 @@ export default function App() {
     <div className="app-shell">
       <Header />
       <Routes>
+        <Route path="/" element={user ? <Navigate to="/dashboard" replace /> : <Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
@@ -82,9 +85,9 @@ export default function App() {
           }
         />
 
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        <Route path="*" element={<Navigate to={user ? '/dashboard' : '/'} replace />} />
       </Routes>
+      {user && <ChatWidget />}
     </div>
   );
 }

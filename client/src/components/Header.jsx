@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="site-header-inner">
-        <Link to={user ? '/dashboard' : '/login'} style={{ textDecoration: 'none' }}>
+        <Link to={user ? '/dashboard' : '/'} style={{ textDecoration: 'none' }}>
           <div className="brand-mark">
             <span className="brand-dot" />
             <div className="brand-text">

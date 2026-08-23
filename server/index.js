@@ -10,6 +10,7 @@ const practiceRoutes = require('./routes/practice');
 const mockExamRoutes = require('./routes/mockExam');
 const historyRoutes = require('./routes/history');
 const adminRoutes = require('./routes/admin');
+const chatRoutes = require('./routes/chat');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use('/api/practice', practiceRoutes);
 app.use('/api/mock-exam', mockExamRoutes);
 app.use('/api/history', historyRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/chat', chatRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
