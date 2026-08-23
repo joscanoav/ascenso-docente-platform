@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export default function Login() {
@@ -60,8 +60,10 @@ export default function Login() {
           </button>
         </form>
 
-        <p style={{ textAlign: 'center', fontSize: 13.5 }}>
-          ¿No tienes cuenta? <Link to="/register">Regístrate</Link>
+        {/* Mensaje informativo reemplazando el enlace de registro */}
+        <p style={{ textAlign: 'center', fontSize: 13.5, marginTop: '20px', color: 'var(--muted)' }}>
+          El acceso a la plataforma es exclusivo para alumnos matriculados.<br/>
+          <strong style={{ color: 'var(--navy)' }}>Tus credenciales te serán enviadas por WhatsApp o correo.</strong>
         </p>
       </div>
     </div>

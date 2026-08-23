@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import jorgePhoto from '../assets/foto.png'; 
 
 const FEATURES = [
   {
@@ -22,24 +23,52 @@ const FEATURES = [
 export default function Landing() {
   return (
     <div className="landing">
-      <section className="landing-hero">
-        <div className="container landing-hero-inner">
-          <div className="eyebrow">Concurso de Ascenso Docente · Inglés</div>
-          <h1 className="landing-h1">
-            Practica con el examen real,<br />no con adivinanzas.
-          </h1>
-          <p className="landing-lede">
-            300 preguntas oficiales verificadas, retroalimentación pedagógica al instante y un
-            panel de progreso que te dice exactamente qué reforzar antes del examen.
-          </p>
-          <div className="landing-cta-row">
-            <Link to="/login" className="btn btn-primary btn-lg">
-              Ingresa a la plataforma
-            </Link>
-            <Link to="/register" className="btn btn-ghost btn-lg">
-              Crear una cuenta
-            </Link>
+      <section className="container" style={{ paddingTop: '56px', paddingBottom: '64px' }}>
+        <div className="hero" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          
+          <div className="hero-badge">
+            <span className="dot"></span> Plataforma Premium · Ascenso Docente
           </div>
+          
+          {/* Título más ancho y con mayor tamaño */}
+          <h1 style={{ maxWidth: '800px', margin: '0 auto 16px', fontSize: '2.8rem', lineHeight: '1.2' }}>
+            ¿Estás realmente preparado para tu examen de Ascenso Docente?
+          </h1>
+          
+          {/* Copywriter nivel capacitador y contenedor más amplio */}
+          <p className="lede" style={{ maxWidth: '760px', margin: '0 auto 32px', fontSize: '1.15rem' }}>
+            Eleva tu nivel con práctica estratégica basada en evidencia. Diagnostica tu dominio de la especialidad y optimiza tu tiempo de estudio con 300 preguntas oficiales verificadas y retroalimentación pedagógica al instante.
+          </p>
+          
+          <div className="badge-row" style={{ justifyContent: 'center', marginBottom: '36px' }}>
+            <span className="badge">300 preguntas oficiales</span>
+            <span className="badge">Feedback inmediato</span>
+            <span className="badge">Control de progreso</span>
+          </div>
+          
+          <Link to="/login" className="btn btn-primary btn-lg">
+            Ingresar a la plataforma
+          </Link>
+        </div>
+
+        {/* Tarjeta de Profesor ampliada a 800px */}
+        <div className="prof-card" style={{ maxWidth: '800px', margin: '48px auto 0', textAlign: 'left' }}>
+          <div className="prof-photo-wrap">
+            <img className="prof-photo" src={jorgePhoto} alt="Jorge Oscanoa" />
+          </div>
+          <div className="prof-copy">
+            <div className="prof-eyebrow">Tu preparación tiene un profesor detrás</div>
+            <p className="prof-name">Jorge Oscanoa</p>
+            <p className="prof-role">Ingeniero de Software · Docente · Especialista en EdTech e IA aplicada a la educación.</p>
+          </div>
+        </div>
+
+        {/* Caja de Confianza ampliada a 800px */}
+        <div className="trust-box" style={{ maxWidth: '800px', margin: '28px auto 0', textAlign: 'left' }}>
+          <h2 className="serif">¿En qué se basa esta plataforma?</h2>
+          <p>
+            Las preguntas de esta plataforma proceden literalmente de los exámenes oficiales del Concurso de Ascenso Docente de Inglés (2021-2025), sin modificar enunciados ni alternativas. Es una herramienta diseñada para ayudarte a identificar patrones de fortaleza y áreas de mejora con total precisión.
+          </p>
         </div>
       </section>
 
@@ -64,26 +93,26 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className="container landing-features">
-        <h2 style={{ textAlign: 'center', marginBottom: 32 }}>Qué encuentras dentro</h2>
+      <section className="container landing-features" style={{ paddingTop: '64px' }}>
+        <h2 className="serif" style={{ textAlign: 'center', marginBottom: 32 }}>Qué encuentras dentro</h2>
         <div className="landing-features-grid">
           {FEATURES.map((f) => (
             <div key={f.title} className="card landing-feature-card">
-              <h3>{f.title}</h3>
+              <h3 className="serif">{f.title}</h3>
               <p className="muted" style={{ margin: 0 }}>{f.body}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="landing-closing">
-        <div className="container landing-closing-inner">
-          <h2>Tu próximo intento empieza aquí</h2>
-          <p className="muted" style={{ maxWidth: 480, margin: '0 auto 22px' }}>
-            Crea tu cuenta gratis y arranca tu primer simulacro en menos de dos minutos.
+      <section className="landing-closing" style={{ background: '#fff', borderTop: '1px solid var(--line)', padding: '64px 24px', textAlign: 'center', marginTop: '48px' }}>
+        <div className="container">
+          <h2 className="serif">Tu próximo intento empieza aquí</h2>
+          <p className="muted" style={{ maxWidth: 480, margin: '0 auto 24px' }}>
+            Accede con las credenciales proporcionadas tras tu matrícula y arranca tu primer simulacro.
           </p>
-          <Link to="/register" className="btn btn-gold btn-lg">
-            Empezar ahora
+          <Link to="/login" className="btn btn-gold btn-lg">
+            Ir al inicio de sesión
           </Link>
         </div>
       </section>

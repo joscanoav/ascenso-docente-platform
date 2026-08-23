@@ -4,7 +4,7 @@ import api from '../api/client';
 const GREETING = {
   role: 'assistant',
   content:
-    '¡Hola! Soy Ada, tu asistente de la plataforma. Puedo ayudarte con dudas sobre el examen, orientarte dentro de la plataforma o darte un empujón de ánimo si lo necesitas. ¿En qué te ayudo?'
+    '¡Hola! Soy Teach, tu asistente de la plataforma. Puedo ayudarte con dudas sobre el examen, orientarte dentro de la plataforma o darte un empujón de ánimo si lo necesitas. ¿En qué te ayudo?'
 };
 
 export default function ChatWidget() {
@@ -49,9 +49,11 @@ export default function ChatWidget() {
       {open && (
         <div className="chat-panel">
           <div className="chat-panel-header">
-            <div className="chat-avatar">A</div>
+            {/* Se cambió el avatar de A a T */}
+            <div className="chat-avatar">T</div>
             <div>
-              <div className="chat-panel-title">Ada</div>
+              {/* Se cambió el título de Ada a Teach */}
+              <div className="chat-panel-title">Teach</div>
               <div className="chat-panel-subtitle">Asistente de la plataforma</div>
             </div>
             <button
@@ -72,7 +74,8 @@ export default function ChatWidget() {
             ))}
             {sending && (
               <div className="chat-bubble chat-bubble-assistant chat-bubble-typing">
-                Ada está escribiendo…
+                {/* Se actualizó el indicador de escritura */}
+                Teach está escribiendo…
               </div>
             )}
           </div>

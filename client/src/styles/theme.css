@@ -1001,3 +1001,30 @@ p {
     width: calc(100vw - 28px);
   }
 }
+/* ===== ESTILOS DEL HERO Y PERFIL ===== */
+.hero { padding-top: 8px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 7px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px 6px 6px; font-size: 12px; font-weight: 600; color: var(--navy2); margin-bottom: 20px; }
+.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold-dk); }
+.lede { font-size: 17px; max-width: 46ch; color: #48506B; line-height: 1.62; }
+
+/* Tarjeta del Profesor */
+.prof-card { background: var(--navy); border-radius: 18px; padding: 26px; color: #fff; display: flex; gap: 18px; align-items: center; position: relative; overflow: hidden; }
+.prof-card:before { content: ""; position: absolute; top: -40%; right: -15%; width: 220px; height: 220px; background: radial-gradient(circle, rgba(232,195,106,.16), transparent 70%); }
+.prof-photo-wrap { flex-shrink: 0; width: 84px; height: 84px; border-radius: 14px; padding: 3px; background: linear-gradient(155deg, var(--gold), rgba(232,195,106,.15)); position: relative; z-index: 1; }
+.prof-photo { width: 100%; height: 100%; border-radius: 11px; object-fit: cover; display: block; }
+.prof-copy { position: relative; z-index: 1; }
+.prof-copy .prof-eyebrow { font-size: 11px; letter-spacing: .08em; color: #B9C2DB; text-transform: uppercase; margin-bottom: 4px; }
+.prof-copy .prof-name { font-family: var(--serif); font-size: 17px; color: #fff; margin: 0 0 3px; }
+.prof-copy .prof-role { font-size: 12.5px; color: #C7CEE3; line-height: 1.5; margin: 0; }
+
+/* Caja de Confianza */
+.trust-box { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
+.trust-box h2 { font-size: 14.5px; margin-bottom: 8px;}
+.trust-box p { font-size: 13.3px; margin: 0; }
+
+.badge-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Ajustes Responsive para la tarjeta de perfil */
+@media (max-width: 520px) {
+  .prof-card { flex-direction: column; text-align: center !important; }
+}
